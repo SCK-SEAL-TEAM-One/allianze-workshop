@@ -41,4 +41,15 @@ public class ProductRepositoryImpl implements ProductRepository {
 
         return result;
     }
+
+    @Override
+    public Product findOne(String id) {
+        Product result = null;
+
+        for (Map.Entry<String, Product> entry : DATABASE.entrySet()) {
+            result = entry.getValue();
+        }
+
+        return result;
+    }
 }
