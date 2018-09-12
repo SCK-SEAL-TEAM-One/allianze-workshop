@@ -47,32 +47,5 @@ public class ProductsControllerTest {
 
     }
 
-    private void setProduct(SearchProductsResp expectedResult) {
-        Product product = new Product();
-        product.setBrand("CoolKidz");
-        product.setAvailability("InStock");
-        product.setName("43 Piece dinner Set");
-        product.setPrice(new BigDecimal(12.95));
-
-        Product product2 = new Product();
-        product.setBrand("CoolKidz");
-        product.setAvailability("InStock");
-        product.setName("Best Friends Forever Magnetic Press Up");
-        product.setPrice(new BigDecimal(24.95));
-
-        Product product3 = new Product();
-        product.setBrand("CoolKidz");
-        product.setAvailability("InStock");
-        product.setName("Princess Palace");
-        product.setPrice(new BigDecimal(24.95));
-
-        List products = new ArrayList();
-        products.add(product);
-        products.add(product2);
-        products.add(product3);
-
-        expectedResult.setProducts(products);
-    }
-
 
 }

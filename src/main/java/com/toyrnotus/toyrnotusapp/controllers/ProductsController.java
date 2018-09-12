@@ -14,9 +14,6 @@ import java.util.List;
 @RequestMapping("/")
 public class ProductsController {
 
-    private String age;
-    private String gender;
-
     @Autowired
     private ProductService productService;
 
