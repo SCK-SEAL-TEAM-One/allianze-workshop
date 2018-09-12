@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "44067811-7c48-47fd-aa6b-518ad073b626",
+						"id": "1b6c7593-b996-4b28-89c2-9e89845a37d6",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Products should be 3 products\", function () {",
@@ -33,21 +33,21 @@
 							"pm.test(\"second Product should be Best Friends Forever Magnetic Press Up\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    var products = jsonData.products;",
-							"    pm.expect(products[0].id).to.eql(7);",
-							"    pm.expect(products[0].name).to.eql(\"Best Friends Forever Magnetic Press Up\");",
-							"    pm.expect(products[0].price).to.eql(24.95);",
-							"    pm.expect(products[0].brand).to.eql(\"Coolkidz\");",
-							"    pm.expect(products[0].availability).to.eql(\"InStock\");",
+							"    pm.expect(products[1].id).to.eql(7);",
+							"    pm.expect(products[1].name).to.eql(\"Best Friends Forever Magnetic Press Up\");",
+							"    pm.expect(products[1].price).to.eql(24.95);",
+							"    pm.expect(products[1].brand).to.eql(\"Coolkidz\");",
+							"    pm.expect(products[1].availability).to.eql(\"InStock\");",
 							"});",
 							"",
 							"pm.test(\"third Product should be Princess Palace\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    var products = jsonData.products;",
-							"    pm.expect(products[0].id).to.eql(6);",
-							"    pm.expect(products[0].name).to.eql(\"Princess Palace\");",
-							"    pm.expect(products[0].price).to.eql(24.95);",
-							"    pm.expect(products[0].brand).to.eql(\"Coolkidz\");",
-							"    pm.expect(products[0].availability).to.eql(\"InStock\");",
+							"    pm.expect(products[2].id).to.eql(6);",
+							"    pm.expect(products[2].name).to.eql(\"Princess Palace\");",
+							"    pm.expect(products[2].price).to.eql(24.95);",
+							"    pm.expect(products[2].brand).to.eql(\"Coolkidz\");",
+							"    pm.expect(products[2].availability).to.eql(\"InStock\");",
 							"});"
 						]
 					}
@@ -130,7 +130,7 @@
 			"response": []
 		},
 		{
-			"name": "Add Product to Cart name Princess Palace",
+			"name": "Add Product to Cart productId 6 should be HTTP status 200",
 			"event": [
 				{
 					"listen": "test",
@@ -191,7 +191,7 @@
 			"response": []
 		},
 		{
-			"name": "Save Address to Shipping",
+			"name": "Save Address to Shipping should be HTTP status 200",
 			"event": [
 				{
 					"listen": "test",
@@ -235,7 +235,7 @@
 			"response": []
 		},
 		{
-			"name": "Place Order",
+			"name": "Place Order should be HTTP status 200",
 			"event": [
 				{
 					"listen": "test",
