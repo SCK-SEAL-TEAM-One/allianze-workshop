@@ -7,9 +7,9 @@ datecalculate
 ```
 
 ## File Name
-- ใช้ตัวอักษรพิมพ์เล็กทั้งหมด เช่น
+- camelCase ขึ้นต้นด้วยตัวใหญ่ เช่น
 ```
-datecalculate.go
+OrderService.java
 ```
 
 ## Package Name
@@ -35,14 +35,10 @@ day, month, year
 startDay, endMonth
 ```
 
-- ชื่อตัวแปรเก็บค่าที่เป็นพหูพจน์ ให้เติม s ต่อท้ายตัวแปรเสมอ เช่น
+- ชื่อตัวแปรเก็บค่าให้เติม "List" ต่อท้ายตัวแปรเสมอ เช่น
 ```
-days, months
-```
+orderList
 
-- ชื่อตัวแปร struct ให้ตั้งชื่อขึ้นต้นคำแรกด้วยตัวอักษรพิมพ์ใหญ่ ในรูปแบบ **camelCase** เช่น
-```
-ResultDay, ResultMonth
 ```
 
 - ชื่อตัวแปร Constant ให้ตังชื่อเป็นตัวอักษรพิมพ์ใหญ่ทั้งหมด เช่น
@@ -72,3 +68,4 @@ robot duration.robot
 ```
 newman run filename
 ```
+
