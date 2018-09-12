@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "00504942-522e-4ff5-aa69-fc366d9b920a",
+		"name": "e-Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search Products age 3-5 gender Female should be 3 products ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b6c7593-b996-4b28-89c2-9e89845a37d6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Products should be 3 products\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var products = jsonData.products;",
+							"    pm.expect(products.length).to.eql(3);",
+							"});",
+							"",
+							"pm.test(\"first Product should be 43 Piece dinner Set\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var products = jsonData.products;",
+							"    pm.expect(products[0].id).to.eql(2);",
+							"    pm.expect(products[0].name).to.eql(\"43 Piece dinner Set\");",
+							"    pm.expect(products[0].price).to.eql(12.95);",
+							"    pm.expect(products[0].brand).to.eql(\"Coolkidz\");",
+							"    pm.expect(products[0].availability).to.eql(\"InStock\");",
+							"});",
+							"",
+							"pm.test(\"second Product should be Best Friends Forever Magnetic Press Up\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var products = jsonData.products;",
+							"    pm.expect(products[1].id).to.eql(7);",
+							"    pm.expect(products[1].name).to.eql(\"Best Friends Forever Magnetic Press Up\");",
+							"    pm.expect(products[1].price).to.eql(24.95);",
+							"    pm.expect(products[1].brand).to.eql(\"Coolkidz\");",
+							"    pm.expect(products[1].availability).to.eql(\"InStock\");",
+							"});",
+							"",
+							"pm.test(\"third Product should be Princess Palace\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var products = jsonData.products;",
+							"    pm.expect(products[2].id).to.eql(6);",
+							"    pm.expect(products[2].name).to.eql(\"Princess Palace\");",
+							"    pm.expect(products[2].price).to.eql(24.95);",
+							"    pm.expect(products[2].brand).to.eql(\"Coolkidz\");",
+							"    pm.expect(products[2].availability).to.eql(\"InStock\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/toyrnotus/SearchProducts?age=3_to_5&gender=FEMALE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"toyrnotus",
+						"SearchProducts"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "3_to_5"
+						},
+						{
+							"key": "gender",
+							"value": "FEMALE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product Details ProductId 6 should be name Princess Palace",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6544c875-fee1-4208-876f-22bf9cc9d12a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Product Detail should be Princess Palace\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var product = jsonData.product;",
+							"    pm.expect(product.name).to.eql(\"Princess Palace\");",
+							"    pm.expect(product.gender).to.eql(\"Female\");",
+							"    pm.expect(product.price).to.eql(24.95);",
+							"    pm.expect(product.brand).to.eql(\"Coolkidz\");",
+							"    pm.expect(product.availability).to.eql(\"InStock\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/toyrnotus/GetProductDetails?productId=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"toyrnotus",
+						"GetProductDetails"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product to Cart productId 6 should be HTTP status 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0cf751ac-b5fb-476c-9943-b92fff31bbe9",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Add Product to Cart should be Princess Palace\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var order = jsonData.order;",
+							"    pm.expect(order.id).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"productId\" : 6,\n\t\"quantity\" : 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/toyrnotus/AddToCart?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"toyrnotus",
+						"AddToCart"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "6",
+							"disabled": true
+						},
+						{
+							"key": "quantity",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Address to Shipping should be HTTP status 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c1b2c35b-76bc-4d43-84a6-f90a58f96acc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fullname\" : \"test\",\n\t\"address1\" : \"no1\",\n\t\"address2\" : \"soi9\",\n\t\"city\" : \"testcity\",\n\t\"province\" : \"testpro\",\n\t\"postcode\" : 12150,\n\t\"orderId\" : 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/toyrnotus/SaveAddress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"toyrnotus",
+						"SaveAddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Order should be HTTP status 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c1b2c35b-76bc-4d43-84a6-f90a58f96acc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"paymentMethod\" : \"credit\",\n\t\"cardType\" : \"VISA\",\n\t\"bank\" : \"SCB\",\n\t\"cardNumber\" : \"4907341204434264\",\n\t\"expDate\" : \"2023-01-31T00:00:00.000Z\",\n\t\"holderName\" : \"P DANSAKULCHAROENKI\",\n\t\"ccv\" : \"437\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/toyrnotus/PlaceOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"toyrnotus",
+						"PlaceOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

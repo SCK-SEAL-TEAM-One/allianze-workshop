@@ -1,5 +1,8 @@
 package com.toyrnotus.toyrnotusapp.entities;
 
+
+import java.math.BigDecimal;
+
 public class Product {
     private String productId;
     private String name;
