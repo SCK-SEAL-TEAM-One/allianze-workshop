@@ -5,11 +5,12 @@ import com.toyrnotus.toyrnotusapp.repositories.ProductRepository;
 import com.toyrnotus.toyrnotusapp.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
-@Component
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
