@@ -19,7 +19,6 @@ public class ProductServiceTest {
 
     @Test
     public void searchProduct_with_age_3to5_gender_Female_should_be_return_3_productList(){
-        when()
 
         List<Product> productList=productService.searchProduct("3_to_5", "Female");
 
