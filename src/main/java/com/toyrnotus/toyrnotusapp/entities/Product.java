@@ -9,6 +9,16 @@ public class Product {
     private String age;
     private String gender;
 
+    public Product(String productId, String name, BigDecimal price, String brand, String availability, String age, String gender) {
+        this.productId = productId;
+        this.name = name;
+        this.price = price;
+        this.brand = brand;
+        this.availability = availability;
+        this.age = age;
+        this.gender = gender;
+    }
+
     public String getProductId() {
         return productId;
     }
