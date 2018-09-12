@@ -66,6 +66,6 @@ robot duration.robot
 
 ### คำสั่ง Run Acceptance Test (API)
 ```
-newman run filename
+newman run ATDD/API/e-Commerce.postman_collection.json
 ```
 
