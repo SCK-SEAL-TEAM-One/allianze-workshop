@@ -9,4 +9,6 @@ import java.util.List;
 public interface ProductRepository {
 
     public List<Product> findByAgeAndGender(String age, String gender);
+
+    public Product findOne(String id);
 }
